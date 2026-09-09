@@ -137,3 +137,50 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @keyframes scanline { from { transform: translateX(-35%); } to { transform: translateX(35%); } }
 
 @media (max-width: 800px) { .dashboard-shell { display: block; }.dashboard-sidebar { width: 100%; padding: 20px 14px; border-right: 0; border-bottom: 1px solid var(--line); display: flex; gap: 8px; overflow-x: auto; align-items: center; }.dashboard-sidebar .brand, .dashboard-label { display: none; }.dashboard-nav { white-space: nowrap; width: auto; padding: 10px; }.dashboard-content { padding: 38px 14px; }.dashboard-header { display: block; }.dashboard-header .button, .profile-chip { margin-top: 24px; }.dashboard-grid, .info-grid { grid-template-columns: 1fr; }.match-overview { min-height: 180px; }.dashboard-section-head { display: block; }.dashboard-section-head > a { display: block; margin-top: 15px; }.talent-match { display: none; }.info-hero { padding-block: 70px 45px; } }
+
+/* Job detail layout: readable on every screen size */
+.job-detail { max-width: 1180px; }
+.job-detail-head { align-items: center; }
+.job-detail-head > div:first-child { min-width: 0; }
+.job-detail-company { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+.job-detail-grid > div:first-child { min-width: 0; max-width: 680px; }
+.job-detail-aside { position: sticky; top: 24px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.2), 0 0 30px rgba(98,233,255,.06); }
+.job-detail-aside > div { display: grid; gap: 3px; }
+.job-detail-aside strong { font-size: clamp(24px, 3vw, 32px); line-height: 1.15; }
+.job-detail-aside .button { min-height: 56px; border-radius: 10px; font-size: 14px; }
+.detail-badge { box-shadow: 0 0 30px rgba(98,233,255,.12); }
+
+@media (max-width: 800px) {
+  .offers-hero, .job-detail { padding-top: 52px; }
+  .offers-hero h1 { font-size: clamp(48px, 15vw, 72px); }
+  .offers-toolbar { gap: 8px; }
+  .offers-toolbar select, .offers-search { min-height: 48px; }
+  .offers-result-head { gap: 12px; font-size: 9px; }
+  .offer-card { gap: 12px; padding: 20px 0; }
+  .company-badge { width: 38px; height: 38px; flex-basis: 38px; }
+  .offer-title-line h2 { font-size: 15px; line-height: 1.25; }
+  .offer-main p { font-size: 10px; line-height: 1.5; }
+  .offer-match { text-align: right; }
+  .job-detail { padding-bottom: 76px; }
+  .job-detail-head { align-items: flex-start; padding: 48px 0 28px; gap: 18px; }
+  .job-detail-head h1 { font-size: clamp(42px, 13vw, 66px); line-height: .94; overflow-wrap: anywhere; }
+  .job-detail-company { font-size: 13px; line-height: 1.5; }
+  .detail-badge { width: 54px; height: 54px; flex-basis: 54px; font-size: 22px; }
+  .job-detail-grid { display: flex; flex-direction: column; gap: 34px; padding-top: 34px; }
+  .job-detail-grid > div:first-child { max-width: none; }
+  .detail-intro { font-size: 18px !important; line-height: 1.5 !important; }
+  .job-detail-grid h2 { margin-top: 34px; font-size: 20px; }
+  .job-detail-grid p, .job-detail-grid li { font-size: 14px; line-height: 1.7; }
+  .job-detail-aside { position: static; width: 100%; padding: 22px; }
+  .job-detail-aside strong { font-size: 27px; }
+  .job-detail-aside .button { margin-top: 24px; }
+}
+
+@media (max-width: 420px) {
+  .container { width: min(100% - 28px, 620px); }
+  .nav .button-small { padding-inline: 11px; font-size: 11px; }
+  .job-detail-head { gap: 10px; }
+  .detail-badge { width: 48px; height: 48px; flex-basis: 48px; }
+  .job-detail-aside { padding: 20px; }
+  .job-detail-aside strong { font-size: 24px; }
+}
